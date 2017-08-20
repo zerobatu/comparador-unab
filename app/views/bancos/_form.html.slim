@@ -1,0 +1,9 @@
+= simple_form_for(@banco) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :logo, as: :file
+    = f.input :interes_rate
+  .form-actions
+    = f.button :submit

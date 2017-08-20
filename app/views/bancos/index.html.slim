@@ -1,0 +1,35 @@
+.page-header
+  = link_to new_banco_path, class: 'btn btn-primary' do 
+    span.glyphicon.glyphicon-plus
+    |  New Banco
+  h1
+    | Listing bancos
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Name
+        th
+          | Logo
+        th
+          | Interes rate
+        th
+        th
+        th
+    tbody
+      - @bancos.each do | banco |
+        tr
+          td
+            = banco.name
+          td
+            = banco.logo
+          td
+            = banco.interes_rate
+          td
+            = link_to 'Show', banco
+          td
+            = link_to 'Edit', edit_banco_path(banco) 
+          td
+            = link_to 'Destroy', banco, method: :delete, data: { confirm: 'Are you sure?' } 

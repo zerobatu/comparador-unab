@@ -1,7 +1,7 @@
 class ComparatorsController < ApplicationController
   def compare
     @user = User.new(compare_params)
-    @user.build_query
+
     if @user.save
       @bancos = Banco.compare(@user.query)
     else
@@ -16,9 +16,10 @@ class ComparatorsController < ApplicationController
         :name,
         :rut,
         :birthday,
-        query_attibutes: [
+        query_attributes: [
           :instalment,
-          :amount
+          :amount,
+          :foot
         ]
       )
     end

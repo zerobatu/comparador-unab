@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802014618) do
+ActiveRecord::Schema.define(version: 20170821215600) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,16 @@ ActiveRecord::Schema.define(version: 20170802014618) do
     t.text     "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "foot"
   end
 
   add_index "queries", ["user_id"], name: "index_queries_on_user_id", using: :btree
+
+  create_table "seed_migration_data_migrations", force: :cascade do |t|
+    t.string   "version"
+    t.integer  "runtime"
+    t.datetime "migrated_on"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

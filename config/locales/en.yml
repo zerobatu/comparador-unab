@@ -28,6 +28,4 @@ en:
         birthday: 'Fecha de nacimiento'
         amount: 'Monto'
         instalment: 'Plazo'
-
-
-
+        foot: 'Pie %'

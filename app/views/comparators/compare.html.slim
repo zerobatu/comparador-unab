@@ -1,15 +1,20 @@
 h1 Resusltados
 
-table
+table.table.table-striped.table-bordered
   thead
-    th
-      td Banco
-      td Interes
-      td Cuota
-  thead
-    tbody
-      - @bancos.each do |b|
-      th
+    tr
+      th Banco
+      th Credito solicitado
+      th Pie
+      th Credito Total
+      th Interes
+      th Cuota Mensual
+  tbody
+    - @bancos.each do |b|
+      tr
         td= b.name
+        td= b.mortgage_credit_values[:credit]
+        td= b.mortgage_credit_values[:foot_to_pay]
+        td= b.mortgage_credit_values[:total_credit].to_i
         td= b.interes_rate
-        td= 123
+        td= b.mortgage_credit_values[:month_fee].to_i

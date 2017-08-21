@@ -35,6 +35,8 @@
           .col-md-12
             = query.input :instalment, collection: (1..6).map { |i| i*5 }
           .col-md-12
-            = query.input :amount, as: :integer
+            = query.input :amount, as: :integer, input_html: { min: 0, max: 1_000_000_000}
+          .col-md-12
+            = query.input :foot, as: :integer, input_html: { min: 0, max: 100 }
         .col-md-12
           = f.submit "Consultar", class: 'btn btn-primary'

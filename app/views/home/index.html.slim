@@ -5,18 +5,20 @@
         .col-md-12
           h3 Ingresa tus datos
         .col-md-12
-          = f.input :email, as: :email, required: true
+          = f.input :email, as: :email, required: true, placeholder: 'johndoe@correo.com'
         .col-md-12
-          = f.input :name, prompt: 'Nombre Completo'
+          = f.input :name, prompt: 'Nombre Completo', placeholder: 'John Doe'
         .col-md-12
-          = f.input :rut
+          = f.input :rut, placeholder: 'John Doe', placeholder: '12345678-9'
         .col-md-12
+          = f.input :birthday, as: :date, start_year: (Date.today.year - 18), end_year: (Date.today.year - 100), order: [:day, :month, :year]
+
           //.input-group.date
             = f.input :birthday, input_html: { class: 'form-control' } do
               span.input-group-addon
                 i.glyphicon.glyphicon-th
 
-          .form-group.string.optional.user_birthday#sandbox-container
+          //.form-group.string.optional.user_birthday#sandbox-container
             label.control-label.string.optional for="user_birthday" Fecha de nacimiento
             .input-group.date#datetimepicker
               = f.text_field :birthday, class: 'form-control', disabled: true

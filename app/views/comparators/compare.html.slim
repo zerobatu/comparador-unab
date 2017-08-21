@@ -1,1 +1,15 @@
-h1 hola mundo
+h1 Resusltados
+
+table
+  thead
+    th
+      td Banco
+      td Interes
+      td Cuota
+  thead
+    tbody
+      - @bancos.each do |b|
+      th
+        td= b.name
+        td= b.interes_rate
+        td= 123

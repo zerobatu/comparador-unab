@@ -1,0 +1,18 @@
+en:
+  activerecord:
+    models:
+      query: 'Consulta'
+    attribute:
+      query:
+        user_id: 'Usuario'
+        instalment: 'Plazo'
+        amount: 'Monto'
+        result: 'Resultados'
+    errors:
+      models:
+        query:
+          attributes:
+            instalment:
+              blank: 'Debe seleccionar un plazo'
+            amount:
+              blank: 'Debe ingresar un monto'

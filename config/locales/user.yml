@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      user: 'Usuario'
+    attributes:
+      user:
+        name: 'Nombre Completo'
+        rut: 'RUT'
+        birthday: 'Fecha de nacimiento'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: 'Debe ingresar un email'
+            name:
+              blank: 'Debe ingresar su nombre completo'
+            rut:
+              blank: 'Debe ingresar su rut'

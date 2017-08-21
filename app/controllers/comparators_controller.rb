@@ -3,6 +3,7 @@ class ComparatorsController < ApplicationController
     @user = User.new(compare_params)
     @user.build_query
     if @user.save
+      @bancos = Banco.compare(@user.query)
     else
       render "home/index"
     end

@@ -25,7 +25,20 @@ html
             span.icon-bar
             span.icon-bar
           = link_to "Comparador", root_path, class: "navbar-brand"
+
         #navbar.collapse.navbar-collapse
+          - if current_admin.present?
+            ul class="nav navbar-nav navbar-right"
+              li.dropdown
+                a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                  | Reporte 
+                  span class="caret"
+                ul class="dropdown-menu"
+                  li
+                    a href="#" Consultas
+              li= link_to "Bancos", bancos_path
+              li= link_to "Cerrar Sesión", destroy_admin_session_path, method: :delete
+
     .container
       - flash.each do |name, msg|
         = content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
@@ -33,6 +46,6 @@ html
             span aria-hidden="true"
               | &times;
             span.sr-only
-              | Close
+              | Cerrar
           = msg
       = yield

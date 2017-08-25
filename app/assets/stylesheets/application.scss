@@ -41,8 +41,8 @@ body {
 
 
 // Green
-$bgDefault      : #01672c;
-$bgHighlight    : #27ae60;
+$bgDefault      : #11836d;
+$bgHighlight    : #11836d;
 $colDefault     : #ecf0f1;
 $colHover       : #d1ffed;
 
@@ -120,4 +120,9 @@ a.solink::first-letter{
 
 a.solink:hover{
   color:#428bca
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #64bda6 !important;
+  border-color: #64bda6 !important;
 }

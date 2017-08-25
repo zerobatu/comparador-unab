@@ -1,9 +1,13 @@
-.page-header
-  = link_to bancos_path, class: 'btn btn-default' do 
-    span.glyphicon.glyphicon-list-alt
-    |  Back 
-  h1
-    | New 
-    | banco
+.row.
+  .col-md-8.col-md-offset-2
+    .row.card._padding-bottom
+      .col-md-8.col-md-offset-2
+        .page-header
+          = link_to bancos_path, class: 'btn btn-default' do 
+            span.glyphicon.glyphicon-list-alt
+            |  Volver
+          h1
+            | Nuevo 
+            | banco
 
-= render 'form'
+        = render 'form'

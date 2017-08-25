@@ -1,0 +1,17 @@
+.row.
+  .col-md-8.col-md-offset-2
+    .row.card._padding-bottom
+      .col-md-8.col-md-offset-2
+        h2 ¿Olvidate tu contraseña?
+
+        = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+          = f.error_notification
+
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
+
+          .form-actions
+            = f.button :submit, "Enviar instrucciones para resetear contraseña"
+
+        br
+        = render "devise/shared/links"

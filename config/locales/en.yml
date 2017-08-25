@@ -24,8 +24,11 @@ en:
   simple_form:
     labels:
       defaults:
-        name: 'Nombre Completo'
         birthday: 'Fecha de nacimiento'
         amount: 'Monto'
         instalment: 'Plazo'
         foot: 'Pie %'
+        remember_me: 'Recordar mis datos'
+  general:
+    validation_errors:
+      rut: 'Rut invalido.'

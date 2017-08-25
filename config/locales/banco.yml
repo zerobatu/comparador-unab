@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      banco: 'Banco'
+    attributes:
+      banco:
+        name: 'Nombre'
+        logo: 'Logo'
+        interes_rate: 'Tasa de interes'
+    errors:
+      models:
+        banco:
+          attributes:
+            name:
+              blank: 'El nombre no puede estar en blanco.'
+            interes_rate:
+              blank: 'No puede estar en blanco.'

@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, email: true
   validates :name, presence: true
-  validates :rut, presence: true
+  validates :rut, presence: true, rut: true
   validates :birthday, presence: true
   validate :check_birthday
 

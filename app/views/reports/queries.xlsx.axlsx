@@ -1,0 +1,7 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Consultas") do |sheet|
+  sheet.add_row ['Email', 'Nombre completo', 'Rut', 'Fecha de nacimiento', 'Monto Solicitado', 'Plazo', 'Pie']
+  @users.each do |user|
+    sheet.add_row [user.email, user.name, user.rut, user.birthday, user.query.amount, user.query.instalment, user.query.foot]
+  end
+end

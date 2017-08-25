@@ -1,22 +1,26 @@
-.page-header
-  = link_to bancos_path, class: 'btn btn-default' do 
-    span.glyphicon.glyphicon-list-alt
-    |  Back 
-  = link_to edit_banco_path(@banco), class: 'btn btn-primary' do 
-    span.glyphicon.glyphicon-pencil
-    |  Edit 
-  h1
-    | Show banco
-dl.dl-horizontal
-  dt
-    | Name:
-  dd
-    = @banco.name
-  dt
-    | Logo:
-  dd
-    = image_tag(@banco.logo.to_s)
-  dt
-    | Interes rate:
-  dd
-    = @banco.interes_rate
+.row
+  .col-md-8.col-md-offset-2
+    .row.card
+      .col-md-8.col-md-offset-2
+        .page-header
+          = link_to bancos_path, class: 'btn btn-default' do 
+            span.glyphicon.glyphicon-list-alt
+            |  Volver 
+          = link_to edit_banco_path(@banco), class: 'btn btn-primary' do 
+            span.glyphicon.glyphicon-pencil
+            |  Editar 
+          h1
+            | Banco
+        dl.dl-horizontal
+          dt
+            | Nombre:
+          dd
+            = @banco.name
+          dt
+            | Logo:
+          dd
+            = image_tag(@banco.logo.to_s)
+          dt
+            | Interes:
+          dd
+            = @banco.interes_rate

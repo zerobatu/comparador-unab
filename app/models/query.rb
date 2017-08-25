@@ -10,12 +10,12 @@ class Query < ActiveRecord::Base
 
   validates :amount, numericality: {
     greater_than: 999_999,
-    message: 'El monto debe ser mayor a $1.000.000'
+    message: 'El monto debe ser mayor o igual a $1.000.000'
   }
 
   validates :amount, numericality: {
     less_than_or_equal_to: 1_000_000_000,
-    message: 'El monto no debe los $10.000.000.000'
+    message: 'El monto no puede ser mayor a $1.000.000.000'
   }
 
   validates :foot, numericality: {

@@ -20,7 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  helpers:
+    submit:
+      banco:
+        create: 'Crear nuevo banco'
+        update: 'Actualizar banco'
   simple_form:
     labels:
       defaults:

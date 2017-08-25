@@ -1,12 +1,16 @@
-.page-header
-  = link_to bancos_path, class: 'btn btn-default' do
-    span.glyphicon.glyphicon-list-alt
-    |  Back 
-  = link_to @banco, class: 'btn btn-primary' do
-    span.glyphicon.glyphicon-info-sign
-    |  Show 
-  h1
-    | Editing 
-    | banco
+.row
+  .col-md-8.col-md-offset-2
+    .row.card
+      .col-md-8.col-md-offset-2
+        .page-header
+          = link_to bancos_path, class: 'btn btn-default' do
+            span.glyphicon.glyphicon-list-alt
+            |  Volver 
+          = link_to @banco, class: 'btn btn-primary' do
+            span.glyphicon.glyphicon-info-sign
+            |  Ver 
+          h1
+            | Editar 
+            | banco
 
-= render 'form'
+        = render 'form'

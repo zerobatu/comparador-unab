@@ -1,20 +1,22 @@
-h1 Resusltados
-
-table.table.table-striped.table-bordered
-  thead
-    tr
-      th Banco
-      th Credito solicitado
-      th Pie
-      th Credito Total
-      th Interes
-      th Cuota Mensual
-  tbody
-    - @bancos.each do |b|
-      tr
-        td= b.name
-        td= b.mortgage_credit_values[:credit]
-        td= b.mortgage_credit_values[:foot_to_pay]
-        td= b.mortgage_credit_values[:total_credit].to_i
-        td= b.interes_rate
-        td= b.mortgage_credit_values[:month_fee].to_i
+.row.card._padding-top
+  .col-md-12
+    h1 Resultados
+    table.table.table-striped.table-bordered.result-table
+      thead
+        tr
+          th Banco
+          th Credito solicitado
+          th Pie
+          th Credito Total
+          th Interes
+          th Cuota Mensual
+      tbody
+        - @bancos.sort_by! { |b| b.mortgage_credit_values[:month_fee] }
+        - @bancos.each do |b|
+          tr
+            td= b.name
+            td= number_to_currency(b.mortgage_credit_values[:credit], precision: 0, delimiter: '.', format: '%u %n')
+            td= number_to_currency(b.mortgage_credit_values[:foot_to_pay], precision: 0, delimiter: '.', format: '%u %n')
+            td= number_to_currency(b.mortgage_credit_values[:total_credit].to_i, precision: 0, delimiter: '.', format: '%u %n')
+            td #{b.interes_rate}%
+            td= number_to_currency(b.mortgage_credit_values[:month_fee].to_i, precision: 0, delimiter: '.', format: '%u %n')

@@ -16,9 +16,108 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "bootstrap-datetimepicker";
-@import "jquery.steps";
 
 body {
   margin-bottom: 24px;
+}
+
+.card {
+  border: 1px solid #ddd;
+  box-shadow: 0px 0px 10px #848080;
+  padding-bottom: 16px;
+}
+
+._padding-top {
+  padding-top: 16px;
+}
+
+.result-table > tbody > tr:first-child td {
+  background-color: #00ffe7;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+// Green
+$bgDefault      : #01672c;
+$bgHighlight    : #27ae60;
+$colDefault     : #ecf0f1;
+$colHover       : #d1ffed;
+
+
+/* --- Style --- */
+.navbar-default {
+    background-color: $bgDefault;
+    border-color: $bgHighlight;
+    .navbar-brand {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover; }}
+    .navbar-nav {
+        > li {
+            > a {
+                color: $colDefault;
+                &:hover, &:focus {
+                    color: $colHover;   }}}
+        .active {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight; }}
+        .open {
+            > a, > a:hover, > a:focus {
+                color: $colHover;
+                background-color: $bgHighlight;
+                .caret {
+                    border-top-color: $colHover;
+                    border-bottom-color: $colHover; }}}
+        > .dropdown {
+            > a {
+                .caret {
+                    border-top-color: $colDefault;
+                    border-bottom-color: $colDefault; }
+                &:hover, &:focus {
+                    .caret {
+                        border-top-color: $colHover;
+                        border-bottom-color: $colHover; }}}}}
+    .navbar-toggle {
+        border-color: $bgHighlight;
+        &:hover, &:focus {
+            background-color: $bgHighlight; }
+        .icon-bar {
+            background-color: $colDefault; }}}
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: $colDefault;
+        &:hover, &:focus {
+            color: $colHover;
+            background-color: $bgHighlight; }}
+}
+
+/* Do not take in account */
+html {
+  padding-top:30px
+}
+
+a.solink {
+  position:fixed;
+  top:0;
+  width:100%;
+  text-align:center;
+  background:#f3f5f6;
+  color:#cfd6d9;
+  border:1px solid #cfd6d9;
+  line-height:30px;
+  text-decoration:none;
+  transition:all .3s;
+  z-index:999
+}
+
+a.solink::first-letter{
+  text-transform:capitalize
+}
+
+a.solink:hover{
+  color:#428bca
 }

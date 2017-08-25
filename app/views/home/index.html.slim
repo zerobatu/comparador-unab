@@ -1,42 +1,32 @@
-= simple_form_for @user, url: { controller: :comparators, action: :compare } do |f|
-  .row
-    .col-md-6.col-md-offset-3
+.row
+  .col-md-8.col-md-offset-2
+    = simple_form_for @user, url: { controller: :comparators, action: :compare }, html: { class: 'card' } do |f|
       .row
-        .col-md-12
-          h3 Ingresa tus datos
-        .col-md-12
-          = f.input :email, as: :email, required: true, placeholder: 'johndoe@correo.com'
-        .col-md-12
-          = f.input :name, prompt: 'Nombre Completo', placeholder: 'John Doe'
-        .col-md-12
-          = f.input :rut, placeholder: 'John Doe', placeholder: '12345678-9'
-        .col-md-12
-          = f.input :birthday, as: :date, start_year: (Date.today.year - 18), end_year: (Date.today.year - 100), order: [:day, :month, :year]
+        .col-md-8.col-md-offset-2
+          .row
+            .col-md-12
+              h2 INGRESA TUS DATOS
+            .col-md-12
+              = f.input :email, as: :email, required: true, placeholder: 'johndoe@correo.com'
+            .col-md-12
+              = f.input :name, prompt: 'Nombre Completo', placeholder: 'John Doe'
+            .col-md-12
+              = f.input :rut, placeholder: 'John Doe', placeholder: '12345678-9'
+            .col-md-12
+              = f.input :birthday, as: :date, start_year: (Date.today.year - 18), end_year: (Date.today.year - 100), order: [:day, :month, :year]
 
-          //.input-group.date
-            = f.input :birthday, input_html: { class: 'form-control' } do
-              span.input-group-addon
-                i.glyphicon.glyphicon-th
-
-          //.form-group.string.optional.user_birthday#sandbox-container
-            label.control-label.string.optional for="user_birthday" Fecha de nacimiento
-            .input-group.date#datetimepicker
-              = f.text_field :birthday, class: 'form-control', disabled: true
-              span.input-group-addon
-                i.glyphicon.glyphicon-th
-
-  hr
-  .row
-    .col-md-6.col-md-offset-3
+      hr
       .row
-        .col-md-12
-          h3 Datos del Credito
-        = f.simple_fields_for :query, @user.query do |query|
-          .col-md-12
-            = query.input :instalment, collection: (1..6).map { |i| i*5 }
-          .col-md-12
-            = query.input :amount, as: :integer, input_html: { min: 0, max: 1_000_000_000}
-          .col-md-12
-            = query.input :foot, as: :integer, input_html: { min: 0, max: 100 }
-        .col-md-12
-          = f.submit "Consultar", class: 'btn btn-primary'
+        .col-md-8.col-md-offset-2
+          .row
+            .col-md-12
+              h2 DATOS DEL CREDITO
+            = f.simple_fields_for :query, @user.query do |query|
+              .col-md-12
+                = query.input :instalment, collection: (1..6).map { |i| i*5 }
+              .col-md-12
+                = query.input :amount, as: :integer, input_html: { min: 0, max: 1_000_000_000}
+              .col-md-12
+                = query.input :foot, as: :integer, input_html: { min: 0, max: 100 }
+            .col-md-12.text-center
+              = f.submit "Consultar", class: 'btn btn-primary'

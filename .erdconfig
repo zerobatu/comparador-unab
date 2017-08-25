@@ -1,0 +1,21 @@
+attributes:
+  - content
+  - foreign_key
+  - inheritance
+disconnected: true
+filename: Metodologia de Software
+filetype: pdf
+indirect: true
+inheritance: true
+markup: true
+notation: simple
+orientation: vertical
+polymorphism: true
+sort: true
+warn: true
+title: Comparador
+exclude: "
+  SeedMigration::DataMigration
+"
+prepend_primary: false
+cluster: false
